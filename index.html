@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsaKu - Isi Ulang Pulsa & Paket Data</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .payment-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .provider-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .provider-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+            transition: all 0.3s;
+        }
+        
+        .provider-logo:hover, .provider-logo.active {
+            border-color: #4CAF50;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PulsaKu</h1>
+            <p>Isi Ulang Pulsa & Paket Data Murah</p>
+        </header>
+        
+        <div class="card">
+            <h2>Pilih Provider</h2>
+            <div class="provider-list">
+                <img src="https://via.placeholder.com/50?text=Telkomsel" alt="Telkomsel" class="provider-logo active">
+                <img src="https://via.placeholder.com/50?text=XL" alt="XL" class="provider-logo">
+                <img src="https://via.placeholder.com/50?text=Indosat" alt="Indosat" class="provider-logo">
+                <img src="https://via.placeholder.com/50?text=3" alt="3" class="provider-logo">
+                <img src="https://via.placeholder.com/50?text=Axis" alt="Axis" class="provider-logo">
+                <img src="https://via.placeholder.com/50?text=Smartfren" alt="Smartfren" class="provider-logo">
+            </div>
+            
+            <form id="pulsaForm">
+                <div class="form-group">
+                    <label for="phoneNumber">Nomor Handphone</label>
+                    <input type="tel" id="phoneNumber" placeholder="Contoh: 089649925248" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pulsaAmount">Nominal Pulsa</label>
+                    <select id="pulsaAmount" required>
+                        <option value="">Pilih Nominal</option>
+                        <option value="5000">Rp5.000</option>
+                        <option value="10000">Rp10.000</option>
+                        <option value="20000">Rp20.000</option>
+                        <option value="50000">Rp50.000</option>
+                        <option value="100000">Rp100.000</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="paymentMethod">Metode Pembayaran</label>
+                    <select id="paymentMethod" required>
+                        <option value="">Pilih Pembayaran</option>
+                        <option value="dana">DANA</option>
+                        <option value="ovo">OVO</option>
+                        <option value="gopay">GoPay</option>
+                        <option value="bank">Transfer Bank</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Pesan Sekarang</button>
+            </form>
+            
+            <div class="payment-info">
+                <h3>Konfirmasi Pembayaran</h3>
+                <p>Setelah melakukan pembayaran, harap konfirmasi dengan mengirim bukti transfer ke:</p>
+                <p><strong>Nomor DANA:</strong> 089649925248</p>
+                <p><strong>Nomor WhatsApp:</strong> 089649925248</p>
+                <p>Pulsa akan diproses setelah pembayaran dikonfirmasi.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Paket Data</h2>
+            <div class="provider-list">
+                <img src="https://via.placeholder.com/50?text=Telkomsel" alt="Telkomsel" class="provider-logo active">
+                <img src="https://via.placeholder.com/50?text=XL" alt="XL" class="provider-logo">
+                <img src="https://via.placeholder.com/50?text=Indosat" alt="Indosat" class="provider-logo">
+            </div>
+            
+            <div class="form-group">
+                <label for="dataPackage">Pilih Paket Data</label>
+                <select id="dataPackage" required>
+                    <option value="">Pilih Paket</option>
+                    <option value="1gb">1GB - 7 Hari - Rp10.000</option>
+                    <option value="3gb">3GB - 30 Hari - Rp25.000</option>
+                    <option value="5gb">5GB - 30 Hari - Rp40.000</option>
+                    <option value="10gb">10GB - 30 Hari - Rp70.000</option>
+                </select>
+            </div>
+            
+            <button type="button" onclick="orderData()">Beli Paket Data</button>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 PulsaKu - Layanan Isi Ulang Pulsa & Paket Data</p>
+            <p>CS: 089649925248 | Email: cs@pulsaku.id</p>
+        </footer>
+    </div>
+    
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Provider logo selection
+            const providerLogos = document.querySelectorAll('.provider-logo');
+            providerLogos.forEach(logo => {
+                logo.addEventListener('click', function() {
+                    providerLogos.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Form submission
+            const pulsaForm = document.getElementById('pulsaForm');
+            pulsaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const phoneNumber = document.getElementById('phoneNumber').value;
+                const pulsaAmount = document.getElementById('pulsaAmount').value;
+                const paymentMethod = document.getElementById('paymentMethod').value;
+                
+                if (!phoneNumber || !pulsaAmount || !paymentMethod) {
+                    alert('Harap lengkapi semua data!');
+                    return;
+                }
+                
+                alert(`Pesanan berhasil!\n\nNomor: ${phoneNumber}\nNominal: Rp${pulsaAmount}\nMetode: ${paymentMethod}\n\nSilakan lakukan pembayaran dan konfirmasi ke nomor DANA/WhatsApp yang tertera.`);
+                
+                // Reset form
+                pulsaForm.reset();
+            });
+        });
+        
+        function orderData() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const dataPackage = document.getElementById('dataPackage').value;
+            
+            if (!phoneNumber || !dataPackage) {
+                alert('Harap lengkapi nomor handphone dan pilih paket data!');
+                return;
+            }
+            
+            const packageText = document.getElementById('dataPackage').options[document.getElementById('dataPackage').selectedIndex].text;
+            alert(`Paket data berhasil dipesan!\n\nNomor: ${phoneNumber}\nPaket: ${packageText}\n\nSilakan lakukan pembayaran dan konfirmasi ke nomor DANA/WhatsApp yang tertera.`);
+        }
+    </script>
+</body>
+</html>
